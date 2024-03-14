@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Home Page</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .search-container {
+            margin-top: 20px;
+        }
+
+        input[type=text] {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SEARCH EVENTS</h1>
+
+    <div class="search-container">
+        <label for="search">Search Events:</label>
+        <input type="text" id="search" oninput="filterEvents()" placeholder="Enter keyword...">
+    </div>
+
+    <table id="eventsTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2024-03-15</td>
+                <td>Example Event 1</td>
+                <td>City A</td>
+                <td><button onclick="bookNow('Example Event 1')">Book Now</button></td>
+            </tr>
+            <tr>
+                <td>2024-03-16</td>
+                <td>Example Event 2</td>
+                <td>City B</td>
+                <td><button onclick="bookNow('Example Event 2')">Book Now</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+            <tr>
+                <td>2024-03-17</td>
+                <td>Example Event 3</td>
+                <td>City A</td>
+                <td><button onclick="bookNow('Example Event 3')">Book Now</button></td>
+            </tr>
+
+            <tr>
+                <td>2024-03-18</td>
+                <td>Example Event 4</td>
+                <td>City B</td>
+                <td><button onclick="bookNow('Example Event 4')">Book Now</button></td>
+            </tr>
+
+            <tr>
+                <td>2024-03-19</td>
+                <td>Example Event 5</td>
+                <td>City A</td>
+                <td><button onclick="bookNow('Example Event 5')">Book Now</button></td>
+            </tr>
+
+
+            <tr>
+                <td>2024-03-20</td>
+                <td>Example Event 6</td>
+                <td>City B</td>
+                <td><button onclick="bookNow('Example Event 6')">Book Now</button></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <script>
+        function filterEvents() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("eventsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to the "Event" column
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function bookNow(eventName) {
+            alert("Book Now for: " + eventName);
+            // Add your booking logic here
+        }
+    </script>
+
+</body>
+
+</html>

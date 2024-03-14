@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Responsive Web Page</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS styles -->
+    <style>
+        body {
+            background-color: #818890;
+            /* Light background color */
+            color: #343a40;
+            /* Dark text color */
+            font-family: 'Arial', sans-serif;
+            padding-top: 56px;
+            /* Adjusted for Bootstrap Navbar height */
+        }
+
+        .navbar {
+            background-color: #007bff;
+            /* Blue Navbar background color */
+        }
+
+        .jumbotron {
+            background-color: #28a745;
+            /* Green Jumbotron background color */
+            color: #fff;
+            /* White text color */
+        }
+
+        .custom-button {
+            background-color: #dc3545;
+            /* Red button color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Customize further based on your needs */
+
+        /* Example: Style for image container */
+        .image-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="logo-design-for-children-health.webp" alt="Your Logo" style="max-height: 60px;">
+    </a>
+    <!-- Rest of the navbar content... -->
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-light custom-button" id="loginLogoutButton" onclick="redirectLogin()">Log-in</button>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Bootstrap Container -->
+    <div class="container mt-4">
+
+        <!-- Bootstrap Jumbotron -->
+<div class="jumbotron">
+    <h1 class="display-4">Transforming Ideas into Beautiful Websites</h1>
+    <p class="lead">Explore the Excitement of Web Design Innovation</p>
+</div>
+
+
+<!-- Image Gallery Section -->
+<div class="row">
+    <div class="col-md-6">
+        <!-- Image 1 -->
+        <div class="image-container">
+            <img id="displayedImage" src="events-home-page.jpg" alt="Events Home Page">
+        </div>
+        <!-- Image 3 -->
+        <div class="image-container">
+            <img src="Github-profile-page-design.jpg" alt="GitHub Profile Page Design">
+        </div>
+        <!-- Image 5 -->
+        <div class="image-container">
+            <img src="html-css-mini-project.md" alt="HTML CSS Mini Project">
+        </div>
+        <!-- Image 7 -->
+        <div class="image-container">
+            <img src="laud-page.png" alt="Laud Page">
+        </div>
+        <!-- Image 9 -->
+        <div class="image-container">
+            <img src="task-banner-1.jpg" alt="Task Banner 1">
+        </div>
+        <!-- Image 11 -->
+        <div class="image-container">
+            <img src="task-newspaper-1.jpg" alt="Task Newspaper 1">
+        </div>
+        <!-- Image 13 -->
+        <div class="image-container">
+            <img src="task-newspaper-3.jpg" alt="Task Newspaper 3">
+        </div>
+        <!-- Image 15 -->
+        <div class="image-container">
+            <img src="technical-documentation-1.jpg" alt="Technical Documentation 1">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Image 2 -->
+        <div class="image-container">
+            <img src="event-update-page.jpg" alt="Event Update Page">
+        </div>
+        <!-- Image 4 -->
+        <div class="image-container">
+            <img src="Grid-or-flexbox design.jpg" alt="Grid or Flexbox Design">
+        </div>
+        <!-- Image 6 -->
+        <div class="image-container">
+            <img src="ifactory-slant-design.pdf" alt="iFactory Slant Design">
+        </div>
+        <!-- Image 8 -->
+        <div class="image-container">
+            <img src="Survey-Form.png" alt="Survey Form">
+        </div>
+        <!-- Image 10 -->
+        <div class="image-container">
+            <img src="task-banner-2.jpeg" alt="Task Banner 2">
+        </div>
+        <!-- Image 12 -->
+        <div class="image-container">
+            <img src="task-newspaper-2.jpg" alt="Task Newspaper 2">
+        </div>
+        <!-- Image 14 -->
+        <div class="image-container">
+            <img src="task-newspaper-4.jpg" alt="Task Newspaper 4">
+        </div>
+        <!-- Image 16 -->
+        <div class="image-container">
+            <img src="technical-documentation-2.jpg" alt="Technical Documentation 2">
+        </div>
+    </div>
+</div>
+
+
+    <!-- Add Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for dynamic image changes -->
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('displayedImage').src = imageSrc;
+        }
+    </script>
+
+
+
+<script>
+    function changeImage(imageSrc) {
+        document.getElementById('displayedImage').src = imageSrc;
+    }
+
+    function toggleLoginLogout() {
+        var button = document.getElementById('loginLogoutButton');
+        if (button.innerText === 'Login') {
+            // Perform login logic here
+            alert('Login logic goes here');
+            // Change button text to Logout
+            button.innerText = 'Logout';
+        } else {
+            // Perform logout logic here
+            alert('Logout logic goes here');
+            // Change button text to Login
+            button.innerText = 'Login';
+        }
+    }
+
+
+
+    function redirectLogin() {
+            // Replace 'login.html' with the actual path to your login page
+            window.location.href = 'login.html';
+        }
+
+</script>
+
+</body>
+
+</html>
